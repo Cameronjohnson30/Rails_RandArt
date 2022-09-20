@@ -1,0 +1,13 @@
+<h1><%= @style.name %></h1>
+
+<p><%= button_to "Edit Style",
+                  edit_style_path(@style),
+                  method: :get %></p>
+
+<p><%= button_to "Delte Style",
+                  style_path(@style),
+                  method: :delete %></p>
+
+<p><%= button_to "Return to Styles Page"
+                  style_path(@style),
+                  method: :get %></p>
