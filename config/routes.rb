@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'albums#index'
+  root to: 'styles#index'
   resources :styles do 
     resources :categories
   end
