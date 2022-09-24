@@ -15,7 +15,7 @@ class StylesController < ApplicationController
     if @style.save 
       redirect_to styles_path 
     else
-      render :new
+      render :new, status: :unprocessable_entity 
     end 
   end
 
@@ -34,7 +34,7 @@ class StylesController < ApplicationController
     if @style.update(style_params)
       redirect_to styles_path 
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
