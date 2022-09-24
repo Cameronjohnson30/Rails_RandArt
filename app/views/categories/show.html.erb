@@ -1,0 +1,14 @@
+<h1>Category: <%= @category.name %></h1>
+<h2>Style: <%= @style.name %></h2>
+
+<p><%= button_to "Edit Category",
+                  edit_style_categoru_path(@style, @category),
+                  method: :get %></p>
+
+<p><%= button_to "Delete Category",
+                  style_category_path(@style, @category),
+                  method: :delete %></p>
+
+<p><%= button_to "Return to style",
+                  style_path(@style),
+                  method: :get %></p>
