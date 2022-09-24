@@ -22,6 +22,16 @@ class CategoriesController < ApplicationController
     render :edit
   end
 
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_parmas)
+      redirect_to style_path(@category.style)
+    else
+      @style = Style.find(params[:style_id])
+      render :edit
+    end
+  end
+
   private 
     def category_params
       params.require(:category.permit(:name))
