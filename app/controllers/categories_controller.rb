@@ -16,6 +16,12 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def edit
+    @style = Style.find(patams[:style_id])
+    @category = Category.find(params[:id])
+    render :edit
+  end
+
   private 
     def category_params
       params.require(:category.permit(:name))
