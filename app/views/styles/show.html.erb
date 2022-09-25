@@ -14,10 +14,6 @@
   <P>No categories are listed for this style.</p>
 <% end %>
 
-<p><%= button_to "Create new style",
-                  new_style_path, 
-                  method: :get %></p>
-
 <p><%= button_to "Edit Style",
                   edit_style_path(@style),
                   method: :get %></p>
@@ -26,6 +22,6 @@
                   style_path(@style),
                   method: :delete %></p>
 
-<p><%= button_to "Return to Styles Page"
+<p><%= button_to "Return to Styles Page",
                   style_path(@style),
                   method: :get %></p>
