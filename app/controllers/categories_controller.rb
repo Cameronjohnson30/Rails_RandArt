@@ -1,7 +1,12 @@
 class CategoriesController < ApplicationController
   
+  def index 
+    @categories = Category.all
+    render :new
+  end
+
   def new
-    @style = Style.find(params[:stlye_id])
+    @style = Style.find(params[:style_id])
     @category = @style.categories.new
     render :new
   end
@@ -22,6 +27,11 @@ class CategoriesController < ApplicationController
     render :edit
   end
 
+  def show
+    @category = Category.find(params[:id])
+    render :show
+  end
+  
   def update
     @category = Category.find(params[:id])
     if @category.update(category_parmas)
@@ -40,7 +50,7 @@ class CategoriesController < ApplicationController
 
   private 
     def category_params
-      params.require(:category.permit(:name))
+      params.require(:category).permit(:name)
   end
 end
 
