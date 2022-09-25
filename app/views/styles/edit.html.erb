@@ -1,7 +1,3 @@
 <h1>Edit style</h1>
 
-<%= form_for @style do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
-<% end %>
+<%= render "layouts/style_form" %>
