@@ -41,7 +41,7 @@ class StylesController < ApplicationController
   def destroy
     @style = Style.find(params[:id])
     @style.destroy
-    redirected_to styles_path
+    redirect_to styles_path
   end
 
   private 
