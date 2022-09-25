@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_25_172649) do
+ActiveRecord::Schema.define(version: 2022_09_25_173420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2022_09_25_172649) do
     t.integer "style_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "categories_styles", id: false, force: :cascade do |t|
+    t.bigint "style_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_categories_styles_on_category_id"
+    t.index ["style_id"], name: "index_categories_styles_on_style_id"
   end
 
   create_table "ideas", force: :cascade do |t|
