@@ -1,0 +1,19 @@
+<h1>Categories</h1>
+
+<% if @categories.any? %>
+<ul>
+<% @categories.each do |category| %>
+  <li><%= link_to category.name, category_path(category) %></li>
+  <% end %>
+  </ul>
+  <% else %>
+  <p>There are no categories yet.
+<% end %>
+
+<p><%= button_to "Create new category",
+new_category_path, 
+method: :get %></p>
+
+<p><%= button_to "Return to Styles Page",
+                  styles_path(@style),
+                  method: :get %></p>
