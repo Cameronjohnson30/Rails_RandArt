@@ -1,28 +1,27 @@
 class CategoriesController < ApplicationController
   
   def index 
+
     @categories = Category.all
-    render :new
+    render :index
   end
 
   def new
-    @style = Style.find(params[:style_id])
-    @category = @style.categories.new
+    @category = Category.new
     render :new
   end
 
-  def create 
-    @style = Style.find(params[:style_id])
-    @category = @style.categories.new(category_params)
+  def create
+    @category = Category.new(category_params)
     if @category.save
-      redirect_to style_path(@style)
-    else 
+      flash[:notice] = "Category successfully added!"
+      redirect_to categories_path
+    else
       render :new
     end
   end
 
   def edit
-    @style = Style.find(patams[:style_id])
     @category = Category.find(params[:id])
     render :edit
   end
@@ -31,13 +30,13 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     render :show
   end
-  
+
   def update
     @category = Category.find(params[:id])
-    if @category.update(category_parmas)
-      redirect_to style_path(@category.style)
+    if @category.update(category_params)
+      flash[:notice] = "Category successfully updated!"
+      redirect_to categories_path
     else
-      @style = Style.find(params[:style_id])
       render :edit
     end
   end
@@ -45,7 +44,8 @@ class CategoriesController < ApplicationController
   def destroy 
     @category = Category.find(params[:id])
     @category.destroy
-    redirect_to style_path(@category.style)
+    flash[:notice] = "Category successfully DESTROYED!!"
+    redirect_to categories_path
   end
 
   private 
