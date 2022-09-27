@@ -1,12 +1,14 @@
 <h1><%= @style.name %></h1>
 
+<p><%= link_to "create new category", new_category_path(@category) %></p>
+
 <% if @style.categories.any? %>
   <h4>Here are the categories for this style:</h4>
 
   <% @style.categories.each do |category| %>
     <ul>
       <li>
-      <%= link_to category.name, style_category_path(@style, category) %>
+      <%= link_to category.name, category_path(category) %>
       </li>
     </ul>
   <% end %>
@@ -18,10 +20,10 @@
                   edit_style_path(@style),
                   method: :get %></p>
 
-<p><%= button_to "Delte Style",
+<p><%= button_to "Delete Style",
                   style_path(@style),
                   method: :delete %></p>
 
 <p><%= button_to "Return to Styles Page",
-                  style_path(@style),
+                  styles_path(@style),
                   method: :get %></p>
