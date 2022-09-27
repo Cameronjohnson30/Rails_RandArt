@@ -1,14 +1,30 @@
 <h1>Category: <%= @category.name %></h1>
-<h2>Style: <%= @style.name %></h2>
+
+<% if @category.ideas.any? %>
+  <h4>Here are the ideas for the category:</h4>
+
+  <% @category.ideas.each do |idea| %>
+    <ul>
+      <li>
+        <%= link_to idea.name, category_idea_path(@category, idea) %>
+      </li>
+    </ul>
+  <% end %>
+<% else %>
+  <p>No ideas listed for this category.</p>
+<% end %>
+
+<p><%= link_to "Add an Idea", new_category_idea_path(@category) %></p>
+
 
 <p><%= button_to "Edit Category",
-                  edit_style_categoru_path(@style, @category),
+                  edit_category_path(@category),
                   method: :get %></p>
 
 <p><%= button_to "Delete Category",
-                  style_category_path(@style, @category),
+                  category_path(@category),
                   method: :delete %></p>
 
 <p><%= button_to "Return to style",
-                  style_path(@style),
+                  styles_path(@style),
                   method: :get %></p>
