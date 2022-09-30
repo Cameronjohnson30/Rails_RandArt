@@ -1,3 +1,6 @@
 <h1>Ideea: <%= @idea.name %></h1>
-<h2>Category: <%= @category.name %></h2>
 
+
+<p><%= button_to "Return to style",
+                  styles_path(@style),
+                  method: :get %></p>
