@@ -1,6 +1,6 @@
 <h1><%= @style.name %></h1>
 
-<p><%= link_to "create new category", new_category_path(@category) %></p>
+<p><%= link_to "create new category", new_style_category_path(@style) %></p>
 
 <% if @style.categories.any? %>
   <h4>Here are the categories for this style:</h4>
@@ -8,7 +8,7 @@
   <% @style.categories.each do |category| %>
     <ul>
       <li>
-      <%= link_to category.name, category_path(category) %>
+      <%= link_to category.name, style_category_path(@style, category) %>
       </li>
     </ul>
   <% end %>
