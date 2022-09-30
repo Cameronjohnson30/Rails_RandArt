@@ -1,9 +1,10 @@
+
 <h1>Categories</h1>
 
-<% if @categories.any? %>
+<% if @category.any? %>
 <ul>
-<% @categories.each do |category| %>
-  <li><%= link_to category.name, category_path(category) %></li>
+<% @style.categories.each do |category| %>
+  <li><%= link_to category.name, style_category_path(@style, category) %></li>
   <% end %>
   </ul>
   <% else %>
