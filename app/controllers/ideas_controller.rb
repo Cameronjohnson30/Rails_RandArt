@@ -11,7 +11,7 @@ class IdeasController < ApplicationController
     @idea = @category.ideas.new(idea_params)
     if @idea.save
       flash[:notice] = "Idea saved"
-      redirect_to category_path(@category)
+      render :show
     else
       render :new
     end
