@@ -1,6 +1,18 @@
 <h1>Ideea: <%= @idea.name %></h1>
 
 
+
+                  <p><%= link_to "Delete idea", category_idea_path(@category, @idea),
+                  :data => {:confirm => "Are you sure?",
+                                 :method => "delete"} %></p>
+
+
+
 <p><%= button_to "Return to style",
                   styles_path(@style),
                   method: :get %></p>
+<p><%= button_to "Edit Idea",
+                  edit_category_idea_path(@category, @idea),
+                  method: :get %></p>
+
+                  
