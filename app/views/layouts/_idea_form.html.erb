@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @idea %>
 
-<%= form_for [@category, @idea] do |f| %>
+<%= form_for [@style, @category, @idea] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <p><%= f.submit %></p>
