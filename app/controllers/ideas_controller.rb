@@ -1,5 +1,10 @@
 class IdeasController < ApplicationController
 
+  def index
+    @idea = Idea.all
+    render :index
+  end
+
   def new 
     @category = Category.find(params[:category_id])
     @idea = @category.ideas.new
@@ -33,7 +38,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     if @idea.update(idea_params)
       flash[:notice] = "Idea Updated"
-      redirect_to category_path(@idea.category)
+      redirect_to category_idea_path(@idea.category)
     else
       @category = Category.find(params[:category_id])
       render :edit
@@ -44,6 +49,7 @@ class IdeasController < ApplicationController
     @idea = Idea.find(params[:id])
     @idea.destroy
     flash[:notice] = "Idea was deleted"
+    render :index
   end
 
   private
