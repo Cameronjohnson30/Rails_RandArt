@@ -1,7 +1,10 @@
 <%= render "layouts/errors", :object => @category %>
 
-<%= form_for @category do |f| %>
+<%= form_for [@style, @category] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <p><%= f.submit %></p>
 <% end %>
+<p><%= button_to "Return to style",
+                  styles_path(@style),
+                  method: :get %></p>
