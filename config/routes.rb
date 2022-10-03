@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :user
   resources :users
   
+  get "profile/:username" => "users#profile", as: :profile
   root to: 'styles#index'
       resources :styles do 
       resources :categories 
