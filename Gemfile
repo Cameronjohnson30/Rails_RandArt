@@ -2,10 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-gem 'carrierwave', "2.2.2"
-gem 'fog', '~> 1.37.0'
-gem 'mini_magick'
-
+gem "aws-sdk-s3", require: false
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>=2.1.0'
 gem 'jquery-rails'
@@ -65,7 +62,7 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'figaro'
+
 end
 
 
