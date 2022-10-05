@@ -1,0 +1,7 @@
+hi
+<% @posts.each do |post| %>
+  <%= link_to post.user.email, profile_path(post.user.email) %>
+  <%= image_tag post.image, class: "img img-fluid" %>
+  <%= post.total_likes %> likes
+  <%= link_to post.user.email %> <%= simple_format post.description %>
+    <% end %>
