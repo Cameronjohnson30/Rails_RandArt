@@ -1,0 +1,11 @@
+<%= render "layouts/errors", :object => @post %>
+
+<%= form_for @post do |f| %>
+<div class="form-group">
+<%= f.label :image %>
+<%= f.file_field :image, class: "form-control" %>
+<%= f.label :description, class: "form-control" %>
+<%= f.text_area :description %>
+<p><%= f.submit %></p>
+</div>  
+<% end %>
