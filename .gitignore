@@ -6,7 +6,8 @@
 
 # Ignore bundler config.
 /.bundle
-carrierwave.rb
+
+application.yml
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -26,3 +27,6 @@ carrierwave.rb
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Ignore application configuration
+/config/application.yml
