@@ -8,3 +8,9 @@
 <p><%= current_user.website %></p>
 
 
+  <%= form_tag follow_user_path, method: :post do %>
+    <%= hidden_field_tag :follow_id %>
+    <%= submit_tag "Follow" %>
+    <% end %>
+
+  
