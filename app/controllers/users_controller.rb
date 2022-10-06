@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @posts = Post.active
+    @comment = Comment.new
   end
 
   def show 
@@ -13,11 +14,21 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-
-
   def set_user
   @user = User.find_by_username(params[:username])
   end
+
+  def follow_user
+    follower_id = params[:follow_id]
+    if Follower.create(follower: current_user.id, following_id: user_id)
+    flash[:success] = "now following User"
+    redirect_to follow_user_path_path
+    else
+      flash[:error] = "Unable to follow"
+  end
+
+  redirect_to root_path
+end
 
   def update
     respond_to do |format|
