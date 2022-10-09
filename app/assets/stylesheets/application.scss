@@ -3,9 +3,56 @@
 
 
 body {
-  background-color: bisque;
+  background-color: rgb(255, 253, 252);
+  padding-left: 10rem;
 }
 
+.top{
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  padding-right: 10rem;
+}
+.navi_bar{
+  text-align: center;
+
+}
+
+.comment{
+background-color: rgb(234, 249, 249);
+border: 1px solid blue; 
+}
+
+.comments{
+  background-color: rgb(234, 249, 249);
+  border: 1px solid blue; 
+  }
+
 .feed{
-  padding-left: 3rem;
+  width: 45.2rem;
+
+}
+.name{
+  float: right;
+  padding-right: 5rem;
+}
+
+.profile_pic{
+  border-radius: 50%;
+}
+
+.commentphoto{
+  width: 3px;
+}
+
+.profile-stats{
+
+}
+
+i {
+  color: #ddd;
+  cursor: pointer;
+}
+
+i.active{
+  color: #555;
 }
