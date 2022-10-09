@@ -45,3 +45,33 @@ ___________________sep 24th _________
 ___________________sep 25th________________
 * full day in class working on code 7hrs . 19 min
 
+
+___________________sep 26th________________
+* full day in class working on code 3hrs . 22 min
+
+___________________sep 27th________________
+* full day in class working on code 3hrs . 22 min
+
+___________________sep 28th________________
+* full day in class working on code 3hrs . 22 min
+
+___________________oct 2nd________________
+* full day in class working on code 7hrs . 19 min
+
+___________________oct 3rd________________
+* full day in class working on code 3hrs . 38 min
+
+___________________oct 4th________________
+* full day in class working on code 3hrs . 41 min
+
+___________________oct 5th________________
+* full day in class working on code 3hrs . 44 min
+
+___________________oct 6th________________
+* full day in class working on code 10hrs . 38 min
+
+___________________oct 8th________________
+* full day in class working on code 12hrs min
+
+
+total 73 hours roughly 
