@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
     @post = Post.new
@@ -27,6 +28,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     render :show
   end
+
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
