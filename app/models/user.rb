@@ -5,7 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :likes
-  has_many :posts
+  has_many :posts, dependent: :destroy
+  has_one_attached :image
   def total_posts
   0
   end
