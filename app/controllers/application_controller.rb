@@ -11,12 +11,12 @@ class ApplicationController < ActionController::Base
     random_style = Style.all.sample
     random = random_style.name
     style_id = random_style.id
-    random_category = Category.find_by_style_id(style_id)
+    random_category = Category.where(style_id: style_id).sample
     rano = random_category.name
     category_id = random_category.id
-    random_idea = Idea.find_by_category_id(category_id)
+    random_idea = Idea.where(category_id: category_id).sample
     random_id = random_idea.name
-    return "Style:" + " " + random + ", "+ "Category:" + " " + rano + ", " + "Idea:" + random_id
+    return "Style:" + " " + random + ", "+ "Category:" + " " + rano + ", " + "Idea: " + random_id
   end
 protected
   def configure_permitted_params
