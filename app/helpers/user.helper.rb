@@ -1,6 +1,6 @@
 module UsersHelper
 
-  def profile_picture user
+  def profile_picture?(user)
     image_path = user.image.present? ? user.image.thumb.url : "default.png"
     image_tag(image_path)
   end
