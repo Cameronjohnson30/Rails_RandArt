@@ -2,7 +2,6 @@
 
 <% if @category.ideas.any? %>
   <h4>Here are the ideas for the category:</h4>
-
   <% @category.ideas.each do |idea| %>
     <ul>
       <li>
@@ -14,8 +13,7 @@
   <p>No ideas listed for this category.</p>
 <% end %>
 
-<p><%= link_to "Add an Idea", new_category_idea_path(@category) %></p>
-
+<p><%= button_to "Add an Idea", new_category_idea_path(@category), method: :get%></p>
 
 <p><%= button_to "Edit Category",
                   edit_category_path(@category),
