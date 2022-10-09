@@ -1,5 +1,4 @@
 $(function(){
-
   $(".post-like").on("click", function(){
     var post_id = $(this).data("id");
     $.ajax({
