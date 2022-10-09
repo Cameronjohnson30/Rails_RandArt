@@ -13,6 +13,7 @@
 * _Postgres_
 * _SQL_
 * _Devise_
+* _AWS_
 * _CSS_ 
 * _JavaScript_
 * _Markdown_
