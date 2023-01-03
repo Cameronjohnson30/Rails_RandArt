@@ -9,13 +9,24 @@
       <%= post.total_likes %> likes 
       <i class="fa fa-heart like-<%= post.id %> fa-2x like-post" data-id="<%= post.id %>"></i>
       <%= simple_format post.description %>
+      
+      <p><%= button_to "Delete post", post_path(@post),
+                        method: :delete %></p>
+                        
     </div>
-      <p><strong>comments</strong></p>
+
+    
+      <p><strong>Comments</strong></p>
       <% post.comments.each do |comment| %>   
     <div class="comment">
       <%= link_to (image_tag comment.user.image, style:'width:30px'), profile_path(comment.user.username) %>
       <%= link_to comment.user.username, profile_path(comment.user.username) %>
       <%= time_ago_in_words comment.created_at %>
+       
+      <p><%= button_to "Delete Comment",
+      comment_path(@post, @comments),
+      method: :delete %></p>
+      
       <br>
       <%= comment.comment %>
     </div>
