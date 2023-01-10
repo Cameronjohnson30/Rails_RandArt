@@ -1,4 +1,6 @@
+<div class="profile_container">
 <%= image_tag @user.image,  style: 'border-radius: 50%' %>
+</div>
   <br>
   <br>
     <%= @user.first_name %>
@@ -16,6 +18,8 @@
     <% end %>
   <br>
     <% @user.posts.each do |post| %>
+      <div class="user_posts">
     <%= link_to (image_tag post.image, style:'width:500px'), post_path(post) %>
+    </div>
   <% end %>
 
