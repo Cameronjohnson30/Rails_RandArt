@@ -7,14 +7,8 @@ body {
   padding-left: 10rem;
 }
 
-.top{
-  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-align: center;
-  padding-right: 10rem;
-}
 .navi_bar{
   text-align: center;
-
 }
 
 .comment{
@@ -55,4 +49,55 @@ i {
 
 i.active{
   color: #555;
+}
+.profile-picture {
+  width: 50px;
+}
+
+.profile_container img {
+  width: 260px;
+  height: 180px;
+  
+  
+}
+
+.user_posts img {
+  width: 360px;
+  height: auto;
+  flex-wrap: wrap;
+}
+
+.top_container {
+  position: relative;
+  text-align: center;
+}
+.top_image  img {
+transform: scaleX(-1);
+width: 100%;
+height: 200px;
+top: -20px;
+position: relative;
+}
+
+.top{
+  font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding-right: 10rem;
+  font-size: 100px;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.post_view_comments{
+float: inline-start;
+}
+.post_img_show img {
+  width: 400px;
+  float: left;
+  padding-right: 20px;
+}
+
+.post_show {
+
 }
