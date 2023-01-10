@@ -12,6 +12,6 @@ Rails.application.routes.draw do
     resources :categories do 
     resources :ideas
   end
-    resources :posts, only: [:new,:create,:show, :index]
+    resources :posts, only: [:new,:create,:show, :index, :destroy, :edit]
     resources :comments, only: [:create, :destroy]
 end
