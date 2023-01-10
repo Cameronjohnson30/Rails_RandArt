@@ -12,6 +12,12 @@ def create
   end
 end
 
+def destroy
+  @comment = Comment.find_by(params[:comment_id])
+  @comment.destroy
+  flash[:notice] = "comment successfully deleted"
+  redirect_to posts_path
+end
   private 
   def comment_params
   params.require(:comment).permit(:comment, :post_id)
