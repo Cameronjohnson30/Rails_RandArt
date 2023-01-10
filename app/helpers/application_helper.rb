@@ -8,4 +8,7 @@ module ApplicationHelper
   def signed_in?
     !current_user
   end
+  def is_owner?
+    current_user.id === @post_user_id
+  end
 end
