@@ -1,3 +1,24 @@
-<%= link_to (image_tag @post.image, style:'width:800px'), posts_path %> 
+<div class="post_show">
+<div class="post_img_show">
+<%= link_to (image_tag @post.image), posts_path %> 
+</div>
 <br>
+<div class="post_view_comments">
+<h1> Description:
 <%= @post.user.username %>
+</h1>
+
+<p><strong>Comments</strong></p>
+<% @post.comments.each do |comment| %>   
+<div class="comment">
+<%= link_to (image_tag comment.user.image, style:'width:30px'), profile_path(comment.user.username) %>
+<%= link_to comment.user.username, profile_path(comment.user.username) %>
+<%= time_ago_in_words comment.created_at %>
+
+
+<br>
+<%= comment.comment %>
+</div>
+<% end %>
+</div>
+</div>
