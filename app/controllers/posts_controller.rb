@@ -29,11 +29,23 @@ class PostsController < ApplicationController
     render :show
   end
 
+  def update
+    @user = User.find_by(params[:user_id])
+    @post = Post.find_by(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "Post Updated"
+      render :edit
+    else
+      @post = Post.find(params[:id])
+      render :edit
+    end
+  end
+
   def destroy
-    @post = Post.find(params[:id])
+    @post = Post.find_by(params[:post_id])
     @post.destroy
-    flash[:notice] = "Idea was deleted"
-    render :index
+    flash[:notice] = "Post was deleted"
+    redirect_to posts_path
   end
 
   private 
